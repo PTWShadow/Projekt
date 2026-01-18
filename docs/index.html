@@ -292,7 +292,7 @@ $(document).ready(function () {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
+workflowr <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -303,8 +303,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> </a>
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+</a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -317,9 +317,9 @@ aria-hidden="true"></span> </a>
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 1
+aria-hidden="true"></span> 0
 </p>
 <p>
 <strong>Knit directory:</strong> <code>ProjektZaliczeniowy/</code> <span
@@ -342,34 +342,33 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
-<span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
-changes </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
+<span class="glyphicon glyphicon-ok text-success"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
+</a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguncommittedchanges"
+<div id="strongRMarkdownfilestronguptodate"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>The R Markdown file has unstaged changes. To know which version of
-the R Markdown file created these results, you’ll want to first commit
-it to the Git repo. If you’re still working on the analysis, you can
-ignore this warning. When you’re finished, you can run
-<code>wflow_publish</code> to commit the R Markdown file and build the
-HTML.</p>
+<p>Great! Since the R Markdown file has been committed to the Git
+repository, you know the exact version of the code that produced these
+results.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstronge2a121f">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomPTWShadowProjekttree6c5fb235b98d669b0edb436fbb5f74f082e0e563targetblank6c5fb23a">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> e2a121f
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/PTWShadow/Projekt/tree/6c5fb235b98d669b0edb436fbb5f74f082e0e563" target="_blank">6c5fb23</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstronge2a121f"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomPTWShadowProjekttree6c5fb235b98d669b0edb436fbb5f74f082e0e563targetblank6c5fb23a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -378,7 +377,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version e2a121f.
+The results in this page were generated with repository version
+<a href="https://github.com/PTWShadow/Projekt/tree/6c5fb235b98d669b0edb436fbb5f74f082e0e563" target="_blank">6c5fb23</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -396,17 +396,80 @@ Ignored files:
     Ignored:    .RData
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
-    Ignored:    analysis/prezentacja.html
-
-Untracked files:
-    Untracked:  analysis/analiza.Rmd
-    Untracked:  analysis/analiza_files/
-    Untracked:  analysis/cv.Rmd
-    Untracked:  analysis/prezentacja.qmd
 
 Unstaged changes:
-    Modified:   analysis/_site.yml
-    Modified:   analysis/index.Rmd
+    Deleted:    analysis/analiza_files/figure-revealjs/wykres-kolowy-1.png
+    Deleted:    analysis/analiza_files/figure-revealjs/wykres-punkty-1.png
+    Deleted:    analysis/analiza_files/libs/clipboard/clipboard.min.js
+    Deleted:    analysis/analiza_files/libs/quarto-html/light-border.css
+    Deleted:    analysis/analiza_files/libs/quarto-html/popper.min.js
+    Deleted:    analysis/analiza_files/libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css
+    Deleted:    analysis/analiza_files/libs/quarto-html/tabby.min.js
+    Deleted:    analysis/analiza_files/libs/quarto-html/tippy.css
+    Deleted:    analysis/analiza_files/libs/quarto-html/tippy.umd.min.js
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/reset.css
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/reveal.css
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/reveal.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/reveal.esm.js.map
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/reveal.js
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/reveal.js.map
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/league-gothic/LICENSE
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/league-gothic/league-gothic.css
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/league-gothic/league-gothic.eot
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/league-gothic/league-gothic.ttf
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/league-gothic/league-gothic.woff
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/LICENSE
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.eot
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.ttf
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-italic.woff
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.eot
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.ttf
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-regular.woff
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.eot
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.ttf
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibold.woff
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.eot
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.ttf
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro-semibolditalic.woff
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/fonts/source-sans-pro/source-sans-pro.css
+    Deleted:    analysis/analiza_files/libs/revealjs/dist/theme/quarto-73806f0e93c0950b605bb3afe7220856.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/highlight/highlight.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/highlight/highlight.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/highlight/monokai.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/highlight/plugin.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/highlight/zenburn.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/markdown/markdown.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/markdown/markdown.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/markdown/plugin.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/math/katex.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/math/math.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/math/math.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/math/mathjax2.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/math/mathjax3.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/math/plugin.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/notes/notes.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/notes/notes.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/notes/plugin.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/notes/speaker-view.html
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/pdf-export/pdfexport.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/pdf-export/plugin.yml
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/quarto-line-highlight/plugin.yml
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/quarto-support/footer.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/quarto-support/plugin.yml
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/quarto-support/support.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/reveal-menu/menu.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/reveal-menu/menu.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/reveal-menu/plugin.yml
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/search/plugin.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/search/search.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/search/search.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/zoom/plugin.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/zoom/zoom.esm.js
+    Deleted:    analysis/analiza_files/libs/revealjs/plugin/zoom/zoom.js
 
 </code></pre>
 <p>
@@ -455,7 +518,41 @@ Message
 Rmd
 </td>
 <td>
-e2a121f
+<a href="https://github.com/PTWShadow/Projekt/blob/6c5fb235b98d669b0edb436fbb5f74f082e0e563/analysis/index.Rmd" target="_blank">6c5fb23</a>
+</td>
+<td>
+PtwShadow
+</td>
+<td>
+2026-01-18
+</td>
+<td>
+Projekt
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/PTWShadow/Projekt/6c5fb235b98d669b0edb436fbb5f74f082e0e563/docs/index.html" target="_blank">6c5fb23</a>
+</td>
+<td>
+PtwShadow
+</td>
+<td>
+2026-01-18
+</td>
+<td>
+Projekt
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/PTWShadow/Projekt/blob/e2a121f2a1ccb0116adebb09f6f35e436ee868ab/analysis/index.Rmd" target="_blank">e2a121f</a>
 </td>
 <td>
 PtwShadow

@@ -1,17 +1,23 @@
-name: "ProjektZaliczeniowy"
+name: "Mój Projekt"
 output_dir: ../docs
 navbar:
-  title: "ProjektZaliczeniowy"
+  title: "Moje Zaliczenie"
   left:
-  - text: Home
-    href: index.html
-  - text: About
-    href: about.html
-  - text: License
-    href: license.html
+    - text: "Home"
+      href: index.html
+    - text: "CV"
+      href: cv.html
+    - text: "Analiza Danych"
+      href: analiza.html
+    - text: "Prezentacja"
+      href: prezentacja.html
+  right:
+    - icon: fa-github
+      text: Source code
+      href: https://github.com/PTWShadow/Projekt
 output:
   workflowr::wflow_html:
-    toc: yes
-    toc_float: yes
+    toc: true
+    toc_float: true
     theme: cosmo
     highlight: textmate

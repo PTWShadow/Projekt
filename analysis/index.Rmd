@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Strona Główna"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
@@ -8,4 +8,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+## Witaj
+
+Cześć! Tu Grzegorz. Studiuję Informatykę i inżynierie danych
+
+![Uniwersytet Przyrodniczy w Poznaniu](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/UP_Poznan.jpg/500px-UP_Poznan.jpg)
+
+
+**Niniejsza strona została wykonana w pakiecie `workflowr`, co gwarantuje przejrzystość i reprodukowalność projektu.**

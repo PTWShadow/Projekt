@@ -1,0 +1,98 @@
+---
+title: "Moje CV"
+output:
+  workflowr::wflow_html:
+    toc: true
+editor_options:
+  chunk_output_type: console
+---
+
+## Dane Osobowe
+
+* **Imię i Nazwisko:** Grzegorz Jaszczyszyn
+* **Status:** Student Informatyki i Inżynierii Danych
+* **Email:** gj-n@wp.pl
+* **GitHub:** [github.com/PTWShadow](https://github.com/PTWShadow)
+* **Zainteresowania:** Motorsport, Nowe technologie, Piłka nożna.
+
+---
+
+## Profil
+
+Jestem studentem III roku na Uniwersytecie Przyrodniczym w Poznaniu. Moje zainteresowania koncentrują się wokół motoryzacji i analizy danych.
+
+---
+
+## Doświadczenie Zawodowe
+
+### **1. Praktykant w Dziale IT**
+**[Nazwa firmy: xyz]** | *Lipiec 2023 – Wrzesień 2023*
+
+* Wsparcie techniczne dla pracowników firmy (rozwiązywanie problemów sprzętowych i programowych).
+* Konfiguracja stacji roboczych i instalacja oprogramowania biurowego.
+* Udział w migracji danych do chmury oraz wstępna diagnostyka sieci LAN.
+
+### **2. Asystent ds. Wdrożeń i Testów (Praktyki)**
+**[Nazwa Firmy:xyz]** | *Lipiec 2022 – Sierpień 2022*
+
+* Manualne testowanie aplikacji webowych.
+* Współpraca z zespołem deweloperskim przy tworzeniu dokumentacji technicznej.
+* Automatyzacja prostych zadań administracyjnych przy użyciu skryptów (Python/Bash).
+
+### **3. Specjalista ds. Operacji Logistycznych**
+**[Nazwa Firmy:xyz]** | *Wakacje 2021*
+
+* Zarządzanie przepływem towarów w systemie WMS (Warehouse Management System).
+* Optymalizacja rozmieszczenia asortymentu w celu skrócenia czasu kompletacji zamówień (Picking).
+* Praca w oparciu o ścisłe wskaźniki efektywnośc i dbałość o standardy jakościowe.
+
+### **4. Koordynator Procesów Dystrybucyjnych**
+**[Nazwa Firmy:xyz]** | *Wakacje 2020*
+
+* Nadzór nad zgodnością stanów magazynowych (inwentaryzacja).
+* Obsługa terminali mobilnych oraz przygotowywanie towaru do wysyłki.
+* Współpraca z działem transportu w celu terminowej realizacji zamówień klienta kluczowego.
+
+---
+
+## Wykształcenie
+
+### Uniwersytet Przyrodniczy w Poznaniu
+**Kierunek: Informatyka i Inżynieria Danych** | *2023 – Obecnie*
+
+* Zdobyta wiedza: Programowanie w Pythonie, analiza danych, algorytmika i struktury danych.
+* Realizacja projektu zaliczeniowego z wykorzystaniem pakietu `workflowr`.
+
+### Zespół Szkół Elektrycznych Nr 2 im. ks. P. Wawrzyniaka
+**Profil: Informatyczny** | *2019 – 2023*
+
+* Rozszerzona matematyka i informatyka.
+* Kursy: Administracja systemem Linux.
+
+---
+
+## Umiejętności
+
+### Programowanie i Analiza Danych
+* **R:** Poziom średniozaawansowany.
+* **Python:** Podstawy analizy danych.
+* **SQL:** Podstawowa znajomość zapytań bazodanowych.
+
+### Narzędzia i Kompetencje
+* **MS Office:** Zaawansowana obsługa Excela.
+* **Logistyka:** Znajomość procesów magazynowych, systemy WMSh.
+* **Organizacja:** Terminowość i umiejętność pracy zespołowej.
+
+### Języki Obce
+* **Angielski:** B2).
+* **Niemiecki:** A2/B1 (Komunikatywny).
+* **Rosyjski:** A2 (Podstawy).
+
+---
+
+## Projekty
+
+### 1. Analiza Rynku Motoryzacyjnego (Projekt Studencki)
+* Opracowanie pełnego cyklu analizy danych: od czyszczenia danych po wizualizację.
+* Wykorzystanie danych `mtcars` do zbadania korelacji między wagą a spalaniem pojazdów.
+* Publikacja wyników w formie reprodukowalnej strony www.

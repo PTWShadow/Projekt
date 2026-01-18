@@ -1,0 +1,120 @@
+---
+title: "Moja Pasja: Wędkarstwo"
+subtitle: "Relaks, natura i trochę adrenaliny"
+author: "Grzegorz Jaszczyszyn"
+format: 
+  revealjs:
+    theme: night
+    transition: concave
+    slide-number: true
+    self-contained: true
+editor: visual
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## 1. Dlaczego to lubię?
+
+Wędkarstwo to dla mnie coś więcej niż siedzenie nad wodą.
+
+* **Reset głowy:** Po całym tygodniu nauki nic tak nie relaksuje jak cisza nad jeziorem.
+* **Adrenalina:** Ten moment, kiedy spławik znika pod wodą albo czujesz uderzenie na wędce – bezcenne.
+* **Natura:** Można zobaczyć rzeczy, których nie widać z perspektywy kanapy.
+
+---
+
+## 2. Co w ogóle łowię?
+
+Nie jestem zawodowcem, łowię rekreacyjnie. Skupiam się na naszych polskich gatunkach:
+
+1.  **Karp:** Waleczna ryba, daje dużo frajdy przy holu.
+2.  **Szczupak:** Drapieżnik, trzeba go aktywnie szukać (spinning).
+3.  **Leszcz:** Najczęstsza zdobycz, idealna, żeby nie nudzić się nad wodą.
+
+---
+
+## 3. Statystyki z dziennika
+
+Od trzech lat staram się zapisywać ciekawsze sztuki w notatniku.
+
+Nie liczę "drobnicy" (małych rybek), tylko te wymiarowe sztuki, którymi można się pochwalić. Na następnym slajdzie przygotowałem wykres podsumowujący moje wyniki z lat 2021-2023.
+
+---
+
+## 4. Wykres moich połowów
+
+```{r}
+#| label: wykres-ryby-poprawiony
+#| fig-align: center
+
+library(ggplot2)
+
+
+moje_ryby <- data.frame(
+  Rok = factor(c(2021, 2021, 2021, 2022, 2022, 2022, 2023, 2023, 2023)),
+  Gatunek = c("Karp", "Szczupak", "Leszcz", "Karp", "Szczupak", "Leszcz", "Karp", "Szczupak", "Leszcz"),
+  Ilosc = c(12, 5, 35, 18, 9, 25, 24, 4, 42)
+)
+
+
+ggplot(moje_ryby, aes(x = Rok, y = Ilosc, fill = Gatunek)) +
+  geom_col(position = "dodge", width = 0.7) +
+  
+
+  geom_text(aes(label = Ilosc), 
+            position = position_dodge(width = 0.7), 
+            vjust = -0.5, size = 4, fontface = "bold", color = "black") +
+  
+  scale_fill_manual(values = c("Karp" = "#f39c12", "Szczupak" = "#2ecc71", "Leszcz" = "#3498db")) +
+  
+  theme_minimal() +
+  theme(
+    text = element_text(color = "black"),
+    axis.text = element_text(color = "black", size = 12),
+    
+    plot.title = element_text(face = "bold", size = 16, color = "black"),
+    plot.subtitle = element_text(color = "#555555"),
+    
+    legend.position = "bottom",
+    legend.text = element_text(color = "black"),
+    
+    panel.grid.major.y = element_line(color = "#dddddd"),
+    panel.grid.major.x = element_blank()
+  ) +
+  
+  labs(
+    title = "Liczba złowionych ryb (2021-2023)",
+    subtitle = "Statystyki z ostatnich trzech lat",
+    x = "Rok",
+    y = "Liczba sztuk",
+    fill = "Gatunek"
+  )
+```
+
+---
+
+## 5. Analiza wyników
+
+Co widać na wykresie?
+
+* **Niebieskie słupki (Leszcz):** Tego łowię najwięcej, bo najłatwiej go złapać. W 2023 był rekordowy rok (42 sztuki).
+* **Pomarańczowe (Karp):** Widać progres. W 2021 tylko 12 sztuk, a w 2023 już 24. Uczę się i mam lepsze efekty.
+* **Zielone (Szczupak):** Z drapieżnikami jest najtrudniej, to rzadkie trofea, ale każda sztuka cieszy podwójnie.
+
+---
+
+## 6. Wielkie marzenie
+
+Moim celem na przyszłość jest złowienie króla polskich wód – **Suma**.
+
+![](https://atlasryb.online/zdjecia/3530_800.jpg)
+
+To ogromna i silna ryba. Mam nadzieję, że kiedyś uda mi się wyholować taką "bestię" powyżej 150 cm.
+
+---
+
+## 7. Podsumowanie
+
+Wędkarstwo uczy cierpliwości i pokory. Czasem siedzi się 5 godzin i nic nie bierze, a czasem jest branie za braniem.

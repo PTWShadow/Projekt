@@ -1,0 +1,176 @@
+---
+title: "Szczegółowa Analiza Danych Wyścigowych"
+output:
+  workflowr::wflow_html:
+    toc: true
+    number_sections: true
+    code_folding: show
+editor_options:
+  chunk_output_type: inline
+---
+
+## Wstęp i opis zbioru danych
+
+W projekcie analizuję zbiór danych **`mtcars`**. Dane pochodzą z amerykańskiego magazynu motoryzacyjnego z 1974 roku.
+
+Dlaczego ten zbiór? Ponieważ idealnie nadaje się do symulowania pracy inżyniera wyścigowego. Zawiera kluczowe parametry techniczne:
+* `mpg`: Zużycie paliwa (Mile na galon).
+* `hp`: Moc silnika (Konie mechaniczne).
+* `wt`: Waga (w 1000 funtów).
+* `qsec`: Czas na 1/4 mili (Przyspieszenie).
+* `cyl`: Liczba cylindrów.
+
+---
+
+## Konfiguracja środowiska
+
+Wczytuję niezbędne biblioteki. Używam `dplyr` i `ggplot2`.
+
+```{r message=FALSE, warning=FALSE}
+library(dplyr)
+library(ggplot2)
+library(knitr)
+
+
+data("mtcars")
+theme_set(theme_minimal())
+```
+
+---
+
+## Inżynieria Danych: Czyszczenie i Konwersja
+
+Wykorzystuję funkcję **`mutate`** do stworzenia nowych kolumn oraz **`filter`**, aby usunąć auta o zbyt niskiej mocy, które zaburzyłyby analizę aut sportowych.
+
+```{r}
+
+df_cars <- mtcars %>%
+  
+  mutate(Model = rownames(mtcars)) %>%
+  
+  
+  filter(hp > 70) %>%
+  
+ 
+  mutate(
+    
+    Masa_kg = wt * 1000 * 0.453592,
+    
+    
+    Spalanie_L100km = 235.21 / mpg,
+    
+    
+    Skrzynia = ifelse(am == 0, "Automat", "Manual"),
+    
+    Silnik = factor(cyl, levels = c(4, 6, 8), labels = c("R4", "V6", "V8"))
+  )
+
+kable(head(df_cars), caption = "Dane po przetworzeniu")
+```
+
+---
+
+## Analiza Grupowa (Agregacja)
+
+Sprawdzam, jak typ silnika wpływa na średnie osiągi. Używam **`group_by`** oraz **`summarise`**.
+
+```{r}
+
+statystyki_silnika <- df_cars %>%
+  group_by(Silnik) %>%
+  summarise(
+    Liczba_Aut = n(),
+    Srednia_Moc = mean(hp),
+    Srednie_Spalanie = mean(Spalanie_L100km),
+    Sredni_Czas_1_4_mili = mean(qsec)
+  )
+
+
+kable(statystyki_silnika, digits = 1, caption = "Średnie osiągi wg typu silnika")
+```
+
+---
+
+## Wizualizacja 1: Moc a Waga (Scatter Plot)
+
+Pierwszy wykres bada korelację. W motorsporcie szukamy aut lekkich i mocnych.
+
+```{r}
+
+p1 <- ggplot(df_cars, aes(x = Masa_kg, y = hp)) +
+  geom_point(aes(color = Silnik, size = Spalanie_L100km), alpha = 0.7) +
+  labs(
+    title = "Relacja Mocy do Masy",
+    subtitle = "Im cięższe auto, tym zazwyczaj mocniejszy silnik",
+    x = "Masa pojazdu (kg)",
+    y = "Moc silnika (KM)",
+    color = "Typ Silnika",
+    size = "Spalanie"
+  )
+
+print(p1)
+```
+
+**Interpretacja:** Widzimy wyraźną korelację dodatnią. Silniki V8 (niebieskie) są montowane w najcięższych autach. Rozmiar kropki wskazuje, że okupione jest to wysokim spalaniem.
+
+---
+
+## Wizualizacja 2: Dynamika - Czas na 1/4 mili (Boxplot)
+
+Sprawdźmy rozkład czasów przyspieszenia. Czy V8 zawsze jest gwarancją szybkości?
+
+```{r}
+p2 <- ggplot(df_cars, aes(x = Silnik, y = qsec, fill = Silnik)) +
+  geom_boxplot(alpha = 0.6, outlier.colour = "red") +
+  geom_jitter(width = 0.2, alpha = 0.4) +
+  scale_fill_manual(values = c("#2ecc71", "#f1c40f", "#e74c3c")) +
+  labs(
+    title = "Rozkład czasów na 1/4 mili",
+    subtitle = "Silniki V8 mają najniższą medianę (są najszybsze)",
+    x = "Typ Silnika",
+    y = "Czas przejazdu (sekundy)"
+  ) +
+  theme_light()
+
+print(p2)
+```
+
+**Interpretacja:** Wykres pudełkowy pokazuje, że silniki V8 są najszybsze (najniższe wartości na osi Y).
+
+---
+
+## Wizualizacja 3: Ekonomia Jazdy (Bar Chart)
+
+Wizualizacja tabeli stworzonej w sekcji 4. Porównujemy średnie spalanie.
+
+```{r}
+p3 <- ggplot(statystyki_silnika, aes(x = Silnik, y = Srednie_Spalanie, fill = Silnik)) +
+  geom_col() +
+  geom_text(aes(label = round(Srednie_Spalanie, 1)), vjust = -0.5) +
+  scale_fill_brewer(palette = "Reds") +
+  labs(
+    title = "Średnie spalanie na 100 km",
+    subtitle = "Drastyczny wzrost spalania przy przejściu z V6 na V8",
+    x = "Typ Silnika",
+    y = "Litry / 100km"
+  ) +
+  theme_classic()
+
+
+print(p3)
+```
+
+**Interpretacja:** Silniki R4 są bardzo oszczędne (~9L/100km), podczas gdy V8 zużywają średnio ponad 15 litrów. To koszt mocy.
+
+---
+
+
+---
+
+## Podsumowanie Projektu
+
+Przeprowadzona analiza danych `mtcars` przy użyciu języka R pozwoliła na wyciągnięcie następujących wniosków:
+
+1.  **Filtrowanie i czyszczenie danych** jest kluczowe, aby usunąć wartości odstające (auta o zbyt małej mocy).
+2.  Istnieje **silna korelacja** między masą a mocą – inżynierowie lat 70. walczyli z wagą, dokładając większe silniki.
+3.  **Koszty:** Zysk czasowy na 1/4 mili przy przejściu z V6 na V8 jest wyraźny (ok. 2 sekundy), ale kosztuje to dodatkowe 5 litrów paliwa na 100 km.
